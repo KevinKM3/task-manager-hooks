@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TaskListContext } from "../context/TaskListContext";
 
 const TaskForm = () => {
+  const { addTask } = useContext(TaskListContext);
+
   return (
     <form className="form">
       <input

@@ -11,8 +11,8 @@ const App = () => {
     <TaskListContextProvider>
       <div className="container">
         <div className="app-wrapper">
+          <Header />
           <div className="main">
-            <Header />
             <TaskList />
             <TaskForm />
           </div>
