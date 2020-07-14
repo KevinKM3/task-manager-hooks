@@ -8,7 +8,7 @@ const TaskList = () => {
     <div>
       <ul className="list">
         {tasks.map((task) => {
-          return <Task />;
+          return <Task task={task} />;
         })}
       </ul>
     </div>

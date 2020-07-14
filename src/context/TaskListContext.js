@@ -4,9 +4,9 @@ export const TaskListContext = createContext();
 
 const TaskListContextProvider = (props) => {
   const [tasks, setTasks] = useState([
-    { task: "Read the book", id: 1 },
-    { task: "Wash the car", id: 2 },
-    { task: "Write some code", id: 3 },
+    { title: "Make dinner", id: 1 },
+    { title: "Wash the car", id: 2 },
+    { title: "Study JavaScript/React", id: 3 },
   ]);
   return (
     <TaskListContext.Provider value={{ tasks }}>
