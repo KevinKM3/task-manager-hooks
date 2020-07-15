@@ -1,12 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { TaskListContext } from "../context/TaskListContext";
 
 const TaskForm = () => {
   const { addTask } = useContext(TaskListContext);
 
+  const [title, setTitle] = useState("");
+
+  const handleChange = (e) => {};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className="form">
+    <form onSubmit={handleSubmit} className="form">
       <input
+        onChange={handleChange}
         type="text"
         className="task-input"
         placeholder="Add Task..."
