@@ -14,7 +14,7 @@ const TaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (editItem === null) {
+    if (!editItem) {
       addTask(title);
       setTitle("");
     } else {
@@ -23,9 +23,8 @@ const TaskForm = () => {
   };
 
   useEffect(() => {
-    if (editItem !== null) {
+    if (editItem) {
       setTitle(editItem.title);
-      console.log(editItem);
     } else {
       setTitle("");
     }
@@ -43,7 +42,7 @@ const TaskForm = () => {
       />
       <div className="buttons">
         <button type="submit" className="btn add-task-btn">
-          Add Task
+          {editItem ? "Edit Task" : "Add Task"}
         </button>
         <button onClick={clearList} className="btn clear-btn">
           Clear
