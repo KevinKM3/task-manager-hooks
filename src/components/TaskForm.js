@@ -6,16 +6,21 @@ const TaskForm = () => {
 
   const [title, setTitle] = useState("");
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addTask(title);
+    setTitle("");
   };
 
   return (
     <form onSubmit={handleSubmit} className="form">
       <input
         onChange={handleChange}
+        value={title}
         type="text"
         className="task-input"
         placeholder="Add Task..."
